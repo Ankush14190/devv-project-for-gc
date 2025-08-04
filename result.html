@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Your Horoscope</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to left, #8e44ad, #3498db);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.5em;
+    }
+  </style>
+</head>
+<body>
+  <h1>Your Personality</h1>
+  <p id="message"></p>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const letter = urlParams.get('letter');
+
+    const messages = {
+      A: "You are ambitious and confident.",
+      B: "You are a caring and creative person.",
+      C: "You are calm, clever, and charming.",
+      D: "You are driven and dependable.",
+      E: "You are energetic and enthusiastic.",
+      F: "You are fun-loving and fearless.",
+      G: "You are generous and grounded.",
+      H: "You are honest and hardworking.",
+      I: "You are imaginative and independent.",
+      J: "You are joyful and just.",
+      K: "You are kind and keen-minded.",
+      L: "You are loving and logical.",
+      M: "You are motivated and mindful.",
+      N: "You are noble and natural leader.",
+      O: "You are open-hearted and optimistic.",
+      P: "You are passionate and persistent.",
+      Q: "You are quick-witted and quirky.",
+      R: "You are reliable and radiant.",
+      S: "You are smart and sensitive.",
+      T: "You are thoughtful and tenacious.",
+      U: "You are unique and uplifting.",
+      V: "You are vibrant and visionary.",
+      W: "You are warm-hearted and wise.",
+      X: "You are mysterious and extraordinary.",
+      Y: "You are youthful and yielding.",
+      Z: "You are zesty and zealous."
+    };
+
+    document.getElementById("message").innerText = messages[letter] || "Oops! No message for this letter.";
+  </script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Welcome Page</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #2c3e50, #3498db);
+      color: white;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+    }
+
+    label {
+      font-size: 1.5em;
+    }
+
+    input[type="text"] {
+      padding: 10px;
+      font-size: 1em;
+      margin-top: 10px;
+      border: none;
+      border-radius: 5px;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      font-size: 1em;
+      border: none;
+      background-color: #1abc9c;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #16a085;
+    }
+  </style>
+</head>
+<body>
+  <h1>Hi guys, I'm Devv</h1>
+  <h2>there is something for u </h2>
+  <label for="letter">Enter your name's first letter:</label><br>
+  <input type="text" id="letter" maxlength="1">
+  <br>
+  <button onclick="goToResult()">Submit</button>
+
+  <script>
+    function goToResult() {
+      const letter = document.getElementById('letter').value.toUpperCase();
+      if (letter) {
+        window.location.href = `result.html?letter=${letter}`;
+      } else {
+        alert("Please enter a letter.");
+      }
+    }
+  </script>
+</body>
+</html>
+-
